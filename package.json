@@ -1,5 +1,5 @@
 {
-  "name": "typescript",
+  "name": "ts",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "李靖 <356055691@qq.com>",
@@ -10,7 +10,13 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "ts-loader": "^3.5.0",
+    "tslint": "^5.20.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-loader": "^3.5.4",
+    "typescript": "^3.6.4",
     "vue": "^2.5.2",
+    "vue-property-decorator": "^7.3.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

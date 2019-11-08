@@ -5,13 +5,19 @@
     <p>{{ getTxt }}</p>
     <button @click="add">add</button>
     <p>{{ sum }}</p>
+    <Test :name="name"></Test>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+import Test from './test.vue'
 
-@Component
+@Component({
+  components: {
+    Test
+  }
+})
 export default class HelloWorld extends Vue {
   //props
   @Prop() private msg!: string
@@ -19,6 +25,7 @@ export default class HelloWorld extends Vue {
   //data
   private txt: string = '1'
   private sum: number = 0
+  private name: string = 'lmx'
   //computed
   get getTxt(){
     return this.txt

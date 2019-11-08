@@ -1,11 +1,13 @@
 <template>
   <div class="hello">
+    <router-link :to='{ path: "/mine", query: { aa: 11, bb: 22} }'><button>mine</button></router-link>
     <h1>{{ msg }}--{{ names }}</h1>
     <input type="text" v-model="txt">
     <p>{{ getTxt }}</p>
     <button @click="add">add</button>
     <p>{{ sum }}</p>
     <Test :name="name"></Test>
+    <button @click="go('/mine')">mine</button>
   </div>
 </template>
 
@@ -34,6 +36,15 @@ export default class HelloWorld extends Vue {
   private add(){
     this.sum++
     console.log(`sum : ${this.sum}`)
+  }
+  private go(path){
+    this.$router.push({
+      path: path,
+      query: {
+        aa: '333',
+        bb: '444'
+      }
+    })
   }
   //生命周期
   created(){
